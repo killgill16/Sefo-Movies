@@ -1,0 +1,211 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<title>BitMovies</title>
+			<!-- meta name -->
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="keywords" content="">
+			<meta name="author" content="">
+			<!-- Favicon -->
+			<link rel="shortcut icon" type="images/icon" href="{% static 'images/favicon.ico' %}"/>
+			<!-- Bootstrap -->
+			<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+			<!--<link href="css/bootstrap.css" rel="stylesheet">-->
+			<!-- Font Awesome -->
+			<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+			<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+			<!-- Main Style -->
+			<link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
+			<link href="{% static 'css/owl.theme.css' %}" rel="stylesheet">	
+			<link href="{% static 'css/style.css' %}" rel="stylesheet">
+		</head>
+		<body>
+			<div class="wrapper" id="wrapper">
+				<!-- HEADER START-->
+				<header id="#">
+					<nav class="navbar navbar-default">
+						<div class="container-fluid">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+								<a class="navbar-brand" href="/">BitMovies</a>
+							</div>
+
+							<!-- Collect the nav links, forms, and other content for toggling -->
+						
+
+
+
+
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+								<form class="navbar-form navbar-center" action="{% url 'results'  %}" method="get" role="search">
+									<div class="form-group">
+
+										<input class="form-control" type="search" value="Search" name="q" placeholder="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}" required="">
+
+									</div>
+								</form>
+							</div><!-- /.navbar-collapse -->
+						</div><!-- /.container-fluid -->
+					</nav>
+				</header>
+				<!-- TITLES PART-->
+				<section class="classified">
+					<nav class="navbar navbar-default navbar-center">
+						<div class="container">
+							<ul class="nav navbar-nav nabbar-right">
+								<li><a href="/" class="high-light1">Home</a></li>
+								<li><a href="{% url 'movie_list' %}" class="high-light2">Movies</a></li>
+								<li><a href="{% url 'celeb_list' %}" class="high-light3">Celebs</a></li>
+								<li><a href="{% url 'news_list' %}" class="high-light4">News</a></li>
+							</ul>
+						</div>
+					</nav>
+				</section>
+				<!-- HEADER END-->
+
+
+		            	{% block content %}
+		            	{% endblock %}
+
+
+
+				<!--FOOTER START -->    
+				<footer>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-3">
+								<div class="movie-footer">
+									<h4>Movie by Genere</h4>
+									<div class="row">
+										<div class="col-md-6">
+											<ol class="list-unstyled">
+												<li><a href="{% url 'action_list' "action" %}">Action</a></li>
+												<li><a href="{% url 'action_list' "romance" %}">Romance</a></li>
+												<li><a href="{% url 'action_list' "comedy" %}">Comedy</a></li>
+												<li><a href="{% url 'action_list' "adult" %}">Adult</a></li>
+												<li><a href="{% url 'action_list' "adventre" %}">Adventure</a></li>
+												<li><a href="{% url 'action_list' "biography" %}">Biography</a></li>
+												<li><a href="{% url 'action_list' "classic" %}">Classic</a></li>
+												<li><a href="{% url 'action_list' "crime" %}">Crime</a></li>
+												<li><a href="{% url 'action_list' "drama" %}">Drama</a></li>
+												<li><a href="{% url 'action_list' "family" %}">Family</a></li>
+												<li><a href="{% url 'action_list' "fantasy" %}">Fantasy</a></li>
+												<li><a href="{% url 'action_list' "mystery" %}">Mystery</a></li>
+												<li><a href="{% url 'action_list' "horror" %}">Horror</a></li>
+											</ol>
+										</div>
+										<div class="col-md-6">
+											<ol class="list-unstyled">
+												<li><a href="{% url 'action_list' "history" %}">History</a></li>
+												<li><a href="{% url 'action_list' "musical" %}">Musical</a></li>
+												<li><a href="{% url 'action_list' "mystery" %}">Mystery</a></li>
+												<li><a href="{% url 'action_list' "sci-fi" %}">Sci-fi</a></li>
+												<li><a href="{% url 'action_list' "suspense" %}">Suspense</a></li>
+												<li><a href="{% url 'action_list' "thriller" %}">Thriller</a></li>
+												<li><a href="{% url 'action_list' "western" %}">Western</a></li>
+											</ol>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="movie-footer">
+									<h4>Movie Categories</h4>
+									<ol class="list-unstyled">
+										<li><a href="{% url 'now_showing' %}">Now Showing</a></li>
+										<li><a href="{% url 'upcoming_movie' %}">Upcoming Movies</a></li>
+										<li><a href="{% url 'popular_movie' %}">Popular Movies</a></li>
+										<li><a href="{% url 'action_lang' "english" %}">English Movies</a></li>
+										<li><a href="{% url 'action_lang' "hindi" %}">Hindi Movie</a></li>
+										<li><a href="{% url 'action_lang' "tamil" %}">Tamil Movie</a></li>
+										<li><a href="{% url 'action_lang' "telgu" %}">Telugu Movie</a></li>
+										<li><a href="{% url 'action_lang' "gujrati" %}">Gujarati Movies</a></li>
+										<li><a href="{% url 'action_lang' "punjabi" %}">Punjabi Movies</a></li>
+										<li><a href="{% url 'action_lang' "marathi" %}">Marati Movies</a></li>
+										<li><a href="{% url 'action_lang' "urdu" %}">Urudu Movies</a></li>
+									</ol>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="movie-footer">
+									<h4>Celebs</h4>
+									<ol class="list-unstyled">
+										<li><a href="{% url 'celeb_list'%}">Celebs Born Today</a></li>
+										<li><a href="{% url 'celeb_list'%}">Popular Actor</a></li>
+									</ol>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="movie-footer">
+									<h4>Others</h4>
+									<ol class="list-unstyled">
+										<li><a href="#">Collection</a></li>
+										<li><a href="{% url 'news_list' %}">News</a></li>
+										<li><a href="#">FAQ</a></li>
+										<li><a href="#">Privacy Policy</a></li>
+									</ol>
+								</div>
+							</div>
+						</div>
+						
+							<div class="copyright">
+								<div class="subtitle fancy"><span>BITMovies</span></div>
+								<div class="social">
+									<ul class="list-unstyled">
+										<li>
+											<a class="ico" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+										</li>
+										<li>
+											<a class="ico" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+										</li>
+										<li>
+											<a class="ico" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+										</li>
+										<li>
+											<a class="ico" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+					</div>
+                </footer>
+				<!-- FOOTER END -->
+			</div>
+			<!-- initialize jQuery Library --> 
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+			<!-- jquery -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<!-- Bootstrap -->
+			<script src="{% static 'js/bootstrap.min.js' %}"></script>
+			<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+			<script>
+				$(document).ready(function() {
+ 
+				  $("#owl-demo").owlCarousel({
+				 
+					  navigation : false, // Show next and prev buttons
+				 
+					  slideSpeed : 300,
+					  paginationSpeed : 400,
+				 
+					  items : 1, 
+					  itemsDesktop : false,
+					  itemsDesktopSmall : false,
+					  itemsTablet: false,
+					  itemsMobile : false
+				 
+				  });
+				 
+				});
+			</script>
+		
+		</body>
+	</html>				

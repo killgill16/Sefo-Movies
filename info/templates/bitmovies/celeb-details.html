@@ -1,0 +1,98 @@
+<!{% extends 'bitmovies/base.html' %}>
+
+
+
+{% block content %}
+				
+				<!-- CONTENT START-->
+				{% for artist in artists  %}
+				<section class="movies-details video-type"  style="margin: 0 0 20px;">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="main-content-page">
+									<div class="row">
+										<div class="col-md-2">
+											<div class="main-page">
+												<img src="{{artist.profile_pic.url}}" class="img-responsive"alt="video-pre-img">
+											</div>
+										</div>
+										<div class="col-md-7">
+											<div class="page-title">
+												<h4>{{artist.name}}</h4>
+											</div>
+											<div class="release">
+												<h5>Born: {{artist.date_of_birth}}</h5>
+											</div>
+											<div class="release">
+												<h5>{{artist.place_of_birth}}</h5>
+											</div>
+
+											<div class="release">
+											{% for category in artist.category.all %}
+												<h5>{{category}}</h5>
+											{% endfor %}	
+											</div>
+									<div class="crew">
+									<h3>Personal Details</h3>
+									<h4>Height: {{artist.height}}</h4>
+									<h4>SunSign: {{artist.sun_sign}}</h4>
+								</div>
+
+										</div>
+										<div class="col-md-3">
+											
+										</div>
+									</div>
+								</div>
+								<div class="descrip-text">
+									<p>
+										{{artist.bio}}
+									</p>
+								</div>
+								<div class="collapse" id="collapseExample">
+									<div class="card card-block">
+
+									</div>
+								</div>
+								<div class="recomment-title">
+									<h2 style="padding: 0;">
+										Known For
+									</h2>
+								</div>
+								<div class="row">
+								{%for art in artist.get_movies %}
+									<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+										<div class="video-list">
+											<div class="thumbnail">
+												<span class="add-btn pull-right">
+													<a href="#">
+														<i class="fa fa-plus" aria-hidden="true"></i>
+													</a>
+												</span>
+												<img src="{{art.profile_pic.url}}" alt="video-pre-img">
+												<div class="caption">
+													<h4><a href="{% url 'movie_detail' art.slug %}">{{art.title}}</h4></a>
+													
+												</div>
+											</div>
+										</div>
+									</div>
+									{% endfor %}
+
+
+								</div>
+
+								
+							
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+								{% endfor %}
+
+				<!-- CONTENT END-->
+				
+{% endblock content %}

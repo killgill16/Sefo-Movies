@@ -1,0 +1,55 @@
+<!{% extends 'bitmovies/base.html' %}>
+
+
+
+{% block content %}
+				
+				<!-- CONTENT START-->
+				<section class="video-type"  style="margin: 0 0 20px;">
+					<div class="container">
+						<div class="movie-content news-type">
+							<div class="row">
+								{% for news in news %}
+									<div class="col-md-3">
+										<div class="video-list">
+											<div class="thumbnail">
+												<img src="{{news.image_url}}" alt="video-pre-img">
+												<div class="caption caption-news">
+													<h4>{{news.title}}</h4>
+													<div class="news-date">{{news.timestamp}}</div>
+													<p> 
+														{{news.content| truncatechars:100}}
+													</p>
+													<h3><a href="{% url 'news_detaill' news.id %}"> <button class="btn btn-danger btn-sm pull-rights">Read 
+														More</button>
+													</h3></a>
+													
+												</div>
+											</div>
+										</div>
+									</div>
+								{% endfor %}
+
+									<div class="pagination" style="text-align: center;">
+
+								   		<span class="step-links">
+									        {% if news.has_previous %}
+									            <a href="?page={{ news.previous_page_number }}">previous</a>
+									        {% endif %}
+
+									        <span class="current">
+									            Page {{ news.number }} of {{ news.paginator.num_pages }}.
+									        </span>
+
+									        {% if news.has_next %}
+									            <a href="?page={{ news.next_page_number }}">next</a>
+									        {% endif %}
+									    </span>
+									</div>	
+							</div>
+						</div>		
+					</div>
+				</section>
+				<!-- CONTENT END-->
+				
+{% endblock content %}	

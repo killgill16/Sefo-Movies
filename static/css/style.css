@@ -1,0 +1,503 @@
+/*===============================================
+*BITMOVIES MAIN CSS
+*JULY 07 2016
+==================================================*/
+/*
+==================================================
+ Table of Content
+==================================================
+#HEADER	
+#CONTENT
+			(1).signin
+			(2).sign up
+			(3).index
+			
+#FOOTER
+
+#BITMOVIES RESPONSIVE @MEDIA QUERY CSS
+===================================================*/
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,900italic,900,700italic,500italic,500,400italic,700);
+body,html {
+	margin:0px;
+	padding: 0px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	overflow-x: hidden;
+	color: #222;
+	background: #f4f4f4;
+	color: #000;
+	z-index:-1;
+	width: 100%;
+	display: inline-block;
+}
+/*========
+HEADER (Nave Bar)
+===========*/
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #141519;
+    margin-top: 16px;
+}
+.navbar-default {
+    background-color: #141519;
+    border-color: #141519;
+	color: #D11D25;
+    padding: 0px 36px;
+	border-radius: 0px;
+}
+.navbar-default a:active, a:hover a:focus a:visited{
+	color: #D11D25;
+}
+
+.navbar-header .navbar-brand {
+	font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    line-height: 20px;
+    font-weight: 400;
+	margin-top: 18px;
+	padding-top: 20px;
+	color: #D11D25;
+}
+.navbar-form .form-group{
+	margin: 0px 80px 0px 80px;
+	height: 50px;
+}
+}
+textarea:focus, input:focus {
+    outline: none;
+}
+	*button {
+			border: 0;
+	}
+
+	.btn-default {
+	    font-size: 16px;
+	}	
+	.input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group {
+		z-index: 2;
+		margin-left: -1px;
+		background: #A0201A;
+		color: #fff;
+		border: 1px solid #A0201A;
+	}
+	.navbar-default.form-group{
+		height: 44px;
+	}
+
+.classified{
+	margin-top: -21px;
+	background: #fff;
+}
+.classified .navbar-nav>li {
+    text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-size: 22px;
+    line-height: 30px;
+    font-weight: 500;
+	padding: 0px 85px 0px 85px;	
+	display: inline-block;
+}
+/*========
+SLIDERA PART(CSS)
+===========*/
+#owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.movie-slider .span12{
+	position: relative;
+}
+.movie-slider .span12 .play-icon{
+	position: absolute;
+    z-index: 4;
+    /* font-size: 138px; */
+    left: 45%;
+    top: 30%;
+}
+.movie-slider .span12 .play-icon a .fa-play-circle-o{
+	font-size: 138px;
+    font-weight: 100;
+    line-height: 148px;
+	color: #fff;
+
+}
+/*========
+VIDEO PART(CSS)
+===========*/
+.video-type{
+	margin: 0px 0px;
+}
+/*
+.movie-content .thumbnail{
+	width: 100%;
+    max-width: 140px;
+}*/
+.my-collection h4{
+	border-bottom: 1px solid #cfcfcf;
+	color: #000;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+	text-align: left;
+}
+.carousel-inner>.item>a>img,.thumbnail a>img, .thumbnail>img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+	padding: 0px;
+}
+.thumbnail a>img, .thumbnail>img {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.my-collection a {
+	text-decoration: none;;
+}
+.video-type .list-collections{
+	background: #fff;
+    padding: 10px 10px;
+	margin: 60px 0px;
+	height: 1275px;
+    overflow: hidden;
+}
+.video-type h2{
+	color: #000;
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 300;
+	padding: 0 14px;
+}
+.movie-content .recomment-title h2 a{
+	color: #000;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.thumbnail {
+    display: block;
+    padding: 4px;
+    margin-bottom: 10px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+}
+.thumbnail .caption h4{
+	font-size: 15px;
+    font-weight: 400;
+    line-height: 26px;
+    margin: 0;
+    padding: 0;
+}
+.thumbnail .caption h5{
+	background: #fff;
+    border: 1px solid #BB2324;
+    color: #BB2324;
+    width: 22px;
+    height: 22px;
+    padding: 3px 4px;
+    border-radius: 18px;
+    font-size: 9px;
+    line-height: 14px;
+    margin: 0;
+}
+.video-news{
+	background: #fff;
+}
+.video-news .video-news-left .video-card img {
+    width: 100%;
+	height: 398px;
+    display: block;
+    position: relative;
+}
+.video-news-left{
+	padding: 10px;
+}
+.video-news-right{
+	padding: 10px;
+}
+.video-type .recomment-title h2 a {
+    color: #000;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.video-news-right .text-content h4{
+	margin: 0;
+}
+/*========
+FOOTER PART(CSS)
+===========*/
+footer {
+	padding: 8px 12px;
+    text-align: center;
+	background: #0D0D0D;
+    padding-bottom: 1px;
+}
+.movie-footer{
+	color:#BB232F;
+	text-align: center;
+}
+footer .social {
+    margin: 10px auto auto;
+    width: 250px;
+}
+footer .social ul {
+    margin: 0;
+    padding: 0;
+}
+.social ul li{
+    display: inline-block;
+}
+
+.movie-footer h4, ol{
+	text-align: left;
+}
+.movie-footer ol li a{
+	font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px;
+	text-decoration: none;
+}
+.movie-footer ol li a{
+	color:#BB232F;
+}
+.social .list-unstyled li{
+	background: #0D0D0D;
+    border: 1px solid #fff;
+    border-radius: 18px;
+	padding: 3px 0px;
+    width: 38px;
+    height: 38px;
+	margin: 0px 2px;
+}
+footer ul{
+	padding: 0;
+	margin: 0;
+}
+footer ul li .ico {
+    color: #6e6e6e;
+    font-size: 12px;
+    line-height: 35px;
+	width: 42px;
+	max-width: 100%;
+}
+footer .list-unstyled li a {
+    color: #6e6e6e;
+	font-size: 14px;
+    font-weight: 300;
+    line-height: 35px;
+	text-decoration: none;
+}
+footer ul li span {
+	padding: 0px 15px;
+    font-size: 24px;
+    vertical-align: middle;
+}
+footer .social .fa {
+	font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+}
+footer .copyright {
+    padding: 0px 0px 14px;
+    background-color: #0D0D0D;
+    width: 100%;
+    color: #6e6e6e;
+    font-weight: 300;
+    margin: 0;
+}
+footer .copyright .fancy span {
+    display: inline-block;
+    position: relative;
+	font-size: 16px;
+	line-height: 24px;
+	color: #A0201A;
+}
+footer .copyright .fancy span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+footer .copyright .fancy span:after, footer .copyright .fancy span:before {
+    content: "";
+    position: absolute;
+    height: 14px;
+    border-bottom: 2px solid #e3e3e3;
+    top: 0;
+    width: 576px;
+}
+footer .copyright .fancy span:after {
+    left: 100%;
+    margin-left: 15px;
+}
+footer .copyright .fancy span:after, footer .copyright .fancy span:before {
+    content: "";
+    position: absolute;
+    height: 14px;
+    border-bottom: 2px solid #2E2E30;
+    top: 0;
+    width: 576px;
+}
+/*===============================================
+*BITMOVIES RESPONSIVE @MEDIA QUERY CSS
+*JULY 07 2016
+==================================================*/
+
+/* Custom, iPhone Retina */
+@media (min-width : 320px) and (max-width : 479px){
+	
+	.classified .navbar-nav>li {
+		text-align: center;
+		font-family: 'Roboto', sans-serif;
+		font-size: 18px;
+		line-height: 22px;
+		font-weight: 300;
+		padding: 0px !important;
+		display: inline-block !important;
+	}
+	.navbar-form .form-control {
+		width: 532px;
+		max-width: 100%;
+		padding: 18px 10px;
+		border-radius: 0px;
+		font-weight: 400;
+		font-size: 20px;
+		background: #3D403E;
+		color: #fff;
+		border-color: #3D403E;
+	}
+	.input-group-btn {
+		position: relative;
+		top: -37px;
+		right: -107px !important;
+		width: 36px;
+		height: 36px;
+	}	
+}
+ 
+/* Extra Small Devices, Phones */
+@media (min-width : 480px) and (max-width : 767px){
+	
+	.classified .navbar-nav>li {
+		text-align: center;
+		font-family: 'Roboto', sans-serif;
+		font-size: 18px;
+		line-height: 22px;
+		font-weight: 300;
+		padding: 0px 6px 0px 4px !important;
+		display: inline-block !important;
+	}
+	.navbar-form .form-control {
+		width: 532px;
+		max-width: 100%;
+		padding: 18px 10px;
+		border-radius: 0px;
+		font-weight: 400;
+		font-size: 20px;
+		background: #3D403E;
+		color: #fff;
+		border-color: #3D403E;
+	}
+	.input-group-btn {
+		position: relative;
+		top: -37px;
+		right: -212px !important;
+		width: 36px;
+		height: 36px;
+	}
+}
+
+/* Small Devices, Tablets */
+@media (min-width: 768px) and (max-width: 991px) { 
+	.navbar-form .form-control {
+		width: 532px;
+		max-width: 100%;
+		padding: 18px 10px;
+		border-radius: 0px;
+		font-weight: 400;
+		font-size: 20px;
+		background: #3D403E;
+		color: #fff;
+		border-color: #3D403E;
+	}
+	.input-group-btn {
+		position: relative;
+		top: -37px;
+		right: -495px !important;
+		width: 36px;
+		height: 36px;
+	}
+	.classified .navbar-nav>li {
+		text-align: center;
+		font-family: 'Roboto', sans-serif;
+		font-size: 20px;
+		line-height: 28px;
+		font-weight: 300;
+		padding: 0px 30px 0px 30px !important;
+		display: inline-block;
+	}
+	
+}
+
+/* Medium Devices, Desktops */
+@media (min-width: 992px) and (max-width: 1199px) { 
+	.navbar-form .form-control {
+		width: 642px;
+		max-width: 100%;
+		padding: 18px 10px;
+		border-radius: 0px;
+		font-weight: 400;
+		font-size: 20px;
+		background: #3D403E;
+		color: #fff;
+		border-color: #3D403E;
+	}
+	.input-group-btn {
+		position: relative;
+		top: -37px;
+		right: -605px !important;
+		width: 36px;
+		height: 36px;
+	}
+	.classified .navbar-nav>li {
+		text-align: center;
+		font-family: 'Roboto', sans-serif;
+		font-size: 22px;
+		line-height: 30px;
+		font-weight: 300;
+		padding: 0px 60px 0px 60px !important;
+		display: inline-block;
+	}
+ }
+ 
+
+/* Large Devices, Wide Screens */
+@media (min-width: 1200px) { 
+	
+	.navbar-form .form-control {
+		width: 768px;
+		max-width: 100%;
+		padding: 18px 10px;
+		border-radius: 0px;
+		font-weight: 400;
+		font-size: 20px;
+		background: #3D403E;
+		color: #fff;
+		border-color: #3D403E;
+	}
+	.input-group-btn {
+		position: relative;
+		top: -37px;
+		right: -731px;
+		width: 36px;
+		height: 36px;
+	}
+}

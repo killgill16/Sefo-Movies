@@ -1,0 +1,127 @@
+<!{% extends 'bitmovies/base.html' %}>
+{% block content %}
+				
+
+
+				<!-- CONTENT START-->
+				<section class="video-type"  style="margin: 0 0 20px;">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="movie-content">
+									<div class="recomment-title">
+										<h2>
+											Movies in Theater
+
+										</h2>
+									</div>
+									<div class="row">
+									{% for movie in movies_theatre %}
+										<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+											<div class="video-list">
+												<div class="thumbnail">
+													<span class="add-btn pull-right">
+														<a href="#">
+															<i class="fa fa-plus" aria-hidden="true"></i>
+														</a>
+													</span>
+													<img src="{{movie.profile_pic.url}}" alt="video-pre-img">
+													<div class="caption">
+														<h4><a href="{% url 'movie_detail' movie.slug %}">{{movie.title}}</h4></a>
+														<h5 class="rate-card">{{movie.rating}}</h5>
+													</div>
+												</div>
+											</div>
+										</div>
+										{% endfor %}
+									</div>
+								</div>
+								<div class="movie-content">
+									<div class="recomment-title">
+										<h2>
+											Popular Movies
+
+										</h2>
+									</div>
+									<div class="row">
+									{% for movie in popular_movies %}
+										<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+											<div class="video-list">
+												<div class="thumbnail">
+													<span class="add-btn pull-right">
+														<a href="#">
+															<i class="fa fa-plus" aria-hidden="true"></i>
+														</a>
+													</span>
+													<img src="{{movie.profile_pic.url}}" alt="video-pre-img">
+													<div class="caption">
+														<h4><a href="{% url 'movie_detail' movie.slug %}">{{movie.title}}</h4></a>
+														<h5 class="rate-card">{{movie.rating}}</h5>
+													</div>
+												</div>
+											</div>
+										</div>
+										{% endfor %}
+									</div>
+								</div>
+								<div class="movie-content">
+									<div class="recomment-title">
+										<h2>
+											Upcoming Movies
+										</h2>
+									</div>
+									<div class="row">
+									{% for movie in upcoming_movies %}
+										<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+											<div class="video-list">
+												<div class="thumbnail">
+													<span class="add-btn pull-right">
+														<a href="#">
+															<i class="fa fa-plus" aria-hidden="true"></i>
+														</a>
+													</span>
+													<img src="{{movie.profile_pic.url}}" alt="video-pre-img">
+													<div class="caption">
+														<h4><a href="{% url 'movie_detail' movie.slug %}">{{movie.title}}</h4></a>
+														<h5 class="rate-card">{{movie.rating}}</h5>
+													</div>
+												</div>
+											</div>
+										</div>
+										{% endfor %}
+
+									</div>
+								</div>
+								
+								
+								<div class="movie-content">
+									<div class="recomment-title">
+										<h2>
+											Hindi Movies
+											<span class="more pull-right">
+												<a href="{% url 'action_lang' "hindi" %}" class="btn btn-sm">More</a>
+											</span>
+										</h2>
+									</div>
+									<div class="row"> 
+									{% for movie in hindi_movie|slice:":4" %}
+										<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+											<div class="video-list">
+												<div class="thumbnail">
+													<img src="{{movie.profile_pic.url}}" alt="video-pre-img">
+													<div class="caption">
+														<h4><a href="{% url 'movie_detail' movie.slug %}">{{movie.title}}</h4></a>
+														<h5 class="rate-card">{{movie.rating}}</h5>
+													</div>
+												</div>
+											</div>
+										</div>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+						</div>
+				</section>
+				<!-- CONTENT END-->
+
+{% endblock content %}					

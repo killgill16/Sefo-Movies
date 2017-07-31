@@ -1,0 +1,83 @@
+<!{% extends 'bitmovies/base.html' %}>
+
+
+
+{% block content %}
+				
+				<!-- CONTENT START-->
+				<section class="video-type"  style="margin: 0 0 20px;">
+					<div class="container">
+						<div class="row">
+								<div class="col-md-10">
+									<div class="movie-content" style="text-align: center;">
+										<div class="recomment-title">
+											 
+											<h2>
+												Popular Movies
+											</h2>
+											
+										</div>
+										<div class="row">
+											{% for movie in popular %} 
+											<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+												<div class="video-list">
+													<div class="thumbnail">
+														<span class="add-btn pull-right">
+															<a href="{% url 'movie_detail' movie.slug %}">
+																<i class="fa fa-plus" aria-hidden="true"></i>
+															</a>
+														</span>
+														<img src="{{movie.profile_pic.url}}" alt="video-pre-img">
+														<div class="caption">
+															<a href="{% url 'movie_detail' movie.slug %}"><h4>{{movie.title| truncatechars:24}}</h4></a>
+															<h5 class="rate-card">{{movie.rating}}</h5>
+														</div>
+													</div>
+												</div>
+											</div>
+											{% endfor %}
+
+										
+										</div>
+									</div>
+								</div>
+								
+							
+							<div class="row">
+								<div class="col-md-2">
+									<div class="list-movies">
+										<h4>Movies by Genre</h4>
+										<div class="my-collection">
+											<a href="{% url 'action_list' "action" %}"><h4>Action</h4></a>
+											<a href="{% url 'action_list' "adventure" %}"><h4>Adventure</h4></a>
+											<a href="{% url 'action_list' "animation" %}"><h4>Animation</h4></a>
+											<a href="{% url 'action_list' "biography" %}"><h4>Biography</h4></a>
+											<a href="{% url 'action_list' "comedy" %}"><h4>Comedy</h4></a>
+											<a href="{% url 'action_list' "crime" %}"><h4>Crime</h4></a>
+											<a href="{% url 'action_list' "documentary" %}"><h4>Documentary</h4></a>
+											<a href="{% url 'action_list' "drama" %}"><h4>Drama</h4></a>
+											<a href="{% url 'action_list' "fantasy" %}"><h4>Fantasy</h4></a>
+											<a href="{% url 'action_list' "film-noir" %}"><h4>Film-Noir</h4></a>
+											<a href="{% url 'action_list' "history" %}"><h4>History</h4></a>
+											<a href="{% url 'action_list' "horror" %}"><h4>Horror</h4></a>
+											<a href="{% url 'action_list' "music" %}"><h4>Music</h4></a>
+											<a href="{% url 'action_list' "musical" %}"><h4>Musical</h4></a>
+											<a href="{% url 'action_list' "mystery" %}"><h4>Mystery</h4></a>
+											<a href="{% url 'action_list' "romance" %}"><h4>Romance</h4></a>
+											<a href="{% url 'action_list' "sci-fi" %}"><h4>Sci-fi</h4></a>
+											<a href="{% url 'action_list' "short" %}"><h4>Short</h4></a>
+											<a href="{% url 'action_list' "sport" %}"><h4>Sport</h4></a>
+											<a href="{% url 'action_list' "thriller" %}"><h4>Thriller</h4></a>
+											<a href="{% url 'action_list' "war" %}"><h4>War</h4></a>
+											<a href="{% url 'action_list' "western" %}"><h4>Western</h4></a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</section>
+				<!-- CONTENT END-->
+				
+{% endblock content %}

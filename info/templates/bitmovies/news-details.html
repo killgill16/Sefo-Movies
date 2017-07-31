@@ -1,0 +1,48 @@
+<!{% extends 'bitmovies/base.html' %}>
+
+
+
+{% block content %}
+				
+				<!-- CONTENT START-->
+
+
+				<section class="video-type"  style="margin: 0 0 20px;">
+				{%for new in news%}
+					<div class="container">
+
+					
+						<div class="row">
+							<div class="col-md-12">
+								<div class="well movie-content">
+
+									<h3 class="center" style="text-align: center;    font-size: 20px;line-height: 30px; font-weight: 600;margin-top: -6px;">{{new.title}}</h3>
+									<div class="row">
+										<div class="col-md-3">
+											<div class="video-list">
+												<div class="thumbnail">
+													<img src="{{new.image_url}}" alt="video-pre-img">
+												</div>
+											</div>
+										</div>
+										<div class="col-md-9">
+											<div class="video-list">
+												<p style="text-align:justify;    font-size: 14px;line-height: 22px;">
+													{{new.content}}
+
+												</p>
+											</div>
+											<div class="more-fun video-list">
+												<h3 style="text-align: right;"><button class="btn btn-danger btn-sm"><a href = "{{new.source_url}}" style="    color: #fff;text-decoration: none;">Read More</button></h3></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+								
+						</div>
+
+					{% endfor %}	
+				</section>
+				<!-- CONTENT END-->
+{% endblock content %}	

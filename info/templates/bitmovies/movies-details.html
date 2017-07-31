@@ -1,0 +1,134 @@
+<!{% extends 'bitmovies/base.html' %}>
+
+
+
+{% block content %}
+				
+				<!-- CONTENT START-->
+
+				{% for movie in movies %}
+				<section class="movies-details video-type"  style="margin: 0 0 20px;">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								
+								<div class="main-content-page">
+									<div class="row">
+										<div class="col-md-2">
+											<div class="main-page">
+												<img src="{{movie.profile_pic.url}}" class="img-responsive"alt="video-pre-img">
+											</div>
+										</div>
+										<div class="col-md-7">
+											<div class="page-title">
+												<h4>{{movie.title}}</h4>
+												<ul>
+												{% for genre in movie.genre.all %}
+													<li><a href="#">{{genre}}</a></li>
+												{% endfor %}
+
+												</ul>
+											</div>
+											</br>
+											<div class="certified">
+												<h5>{{movie.duration}} | '{{movie.certificate}}' Certified</h5>
+											</div>
+											<div class="release">
+												<h5>Release Date: <span>{{movie.release_date}}</span></h5>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<div class="main-page-ratingdwnld">
+												<h4 class="round">{{movie.rating}}</h4>
+												
+												<span class="badge">Rate & Review</span>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</div>
+								</div>
+								<div class="descrip-text">
+									<p>
+										{{movie.storyline}}
+						
+									</p>
+								</div>
+							
+								</div>
+								<div class="recomment-title">
+									<h2 style="padding: 0;">
+										Actors
+									</h2>
+								</div>
+								<div class="row">
+									{% for cast in movie.actors.all %}
+									<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+										<div class="video-list">
+											<div class="thumbnail">
+												<span class="add-btn pull-right">
+													<a href="#">
+														<i class="fa fa-plus" aria-hidden="true"></i>
+													</a>
+												</span>
+												<img src="{{cast.profile_pic.url}}" alt="video-pre-img">
+												<div class="caption">
+												 
+													<h4><a href="{% url 'celeb_detail' cast.slug %}">{{cast}}</h4></a>
+												
+												
+												</div>
+											</div>
+										</div>
+									</div>
+									{% endfor %}
+
+								</div>
+								<div class="crew">
+									<h3>Crew</h3>
+									
+									<h4>Box office &nbsp;Rs {{movie.boxoffice_collection}}</h4>
+								</div>
+								
+								<div class="box-office">
+									<h3>Box office collection</h3>
+									{% for director in movie.director.all %}
+									<h4>Director : &nbsp; 
+									<a href="{% url 'celeb_detail' director.slug %}"><span>{{director}}</span></h4></a>
+									{% endfor %}
+
+
+									
+									<h4>Writers : &nbsp; 
+									{% for writer in movie.writers.all %}
+									 <a href="{% url 'celeb_detail' writer.slug %}">{{writer}}</a>
+									{% endfor %}
+									</h4>
+									<h5><a href="#"></a></h5>
+								</div>
+								
+								<div class="cast">
+									
+										<h4>All the Cast & Crew</h4>
+										{% for cast in movie.cast.all %}
+										<ul class="list-unstyled">
+											<li>
+
+												<a href="{% url 'celeb_detail' cast.slug %}">{{cast}} </a>
+												
+											</li>
+									</ul>
+									{% endfor %}
+									
+								</div>
+							
+								
+
+						</div>
+					</div>
+				</section>
+
+				{% endfor %}
+				<!-- CONTENT END-->
+{% endblock content %}				
+				
+	

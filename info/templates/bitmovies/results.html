@@ -1,0 +1,112 @@
+<!{% extends 'bitmovies/base.html' %}>
+
+
+
+{% block content %}
+				
+				<!-- CONTENT START-->
+				<section class="video-type"  style="margin: 0 0 20px;">
+					<div class="container">
+						<div class="row">
+								<div class="col-md-10">
+									<div class="movie-content">
+										<div class="recomment-title">
+											<h2 style="text-align: center;">
+												Results
+											</h2>
+
+										</div>
+
+										
+										<h3>Movies</h3>
+										<div class="row">
+										{% for movie in movie|slice:":16" %}
+											<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+												<div class="video-list">
+													<div class="thumbnail">
+														<span class="add-btn pull-right">
+															<a href="#">
+																<i class="fa fa-plus" aria-hidden="true"></i>
+															</a>
+														</span>
+														<img src="{{movie.profile_pic.url}}" alt="video-pre-img">
+														<div class="caption">
+															<h4><a href="{% url 'movie_detail' movie.slug %}">{{movie.title}}</h4> </a>
+															<h5 class="rate-card">{{movie.rating}}</h5>
+														</div>
+													</div>
+												</div>
+											</div>
+											{% endfor %}
+										</div>
+										
+
+										
+										<h3>Artists</h3>
+										
+										<div class="row">
+										{% for artist in artists|slice:":16" %}
+											<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+												<div class="video-list">
+													<div class="thumbnail">
+														<span class="add-btn pull-right">
+															<a href="#">
+																<i class="fa fa-plus" aria-hidden="true"></i>
+															</a>
+														</span>
+														<img src="{{artist.profile_pic.url}}" alt="video-pre-img">
+														<div class="caption">
+															<h4><a href="{% url 'celeb_detail' artist.slug %}">{{artist.name}}</h4> </a>
+														</div>
+													</div>
+												</div>
+											</div>
+											{% endfor %}
+										</div>
+																				
+
+
+
+
+
+									</div>
+								</div>
+								
+							
+							<div class="row">
+								<div class="col-md-2">
+									<div class="list-movies">
+										<h4>Movies by Genre</h4>
+										<div class="my-collection">
+											<a href=""><h4>Action</h4></a>
+											<a href=""><h4>Adventure</h4></a>
+											<a href=""><h4>Animation</h4></a>
+											<a href=""><h4>Biography</h4></a>
+											<a href=""><h4>Comedy</h4></a>
+											<a href=""><h4>Crime</h4></a>
+											<a href=""><h4>Documentary</h4></a>
+											<a href=""><h4>Drama</h4></a>
+											<a href=""><h4>Fantasy</h4></a>
+											<a href=""><h4>Film-Noir</h4></a>
+											<a href=""><h4>History</h4></a>
+											<a href=""><h4>Horror</h4></a>
+											<a href=""><h4>Music</h4></a>
+											<a href=""><h4>Musical</h4></a>
+											<a href=""><h4>Mystery</h4></a>
+											<a href=""><h4>Romance</h4></a>
+											<a href=""><h4>Sci-fi</h4></a>
+											<a href=""><h4>Short</h4></a>
+											<a href=""><h4>Sport</h4></a>
+											<a href=""><h4>Thriller</h4></a>
+											<a href=""><h4>War</h4></a>
+											<a href=""><h4>Western</h4></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- CONTENT END-->
+				
+{% endblock content %}		
